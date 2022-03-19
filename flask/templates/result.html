@@ -1,0 +1,10 @@
+<table border=1>
+    {% if names_user %}
+    {% for key, value in names_user.items() %}
+    <tr>
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>

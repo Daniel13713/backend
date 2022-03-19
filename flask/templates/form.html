@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block title%}
+Form
+{% endblock %}
+
+{% block page %}Form Page{% endblock %}
+
+{% block content%}
+<form action="{{ url_for('form') }}" method="post">
+    <p>Enter Name:</p>
+    <p><input type="text" name="name">Name</p>
+    <p><input type="text" name="age">Age</p>
+    <p><input type="text" name="color">Color</p>
+    <p><input type="submit" value="Save"></p>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% if user_ip %}
+{% block title%}
+User
+{% endblock %}
+
+
+{% block page %}User Page{% endblock %}
+{% block content%}
+<section>
+    <article>
+        <h2>Hello there {{user_ip}}</h2>
+    </article>
+</section>
+<section>
+    {% include 'result.html'%}
+</section>
+{% endblock %}
+
+{% else %}
+<a href="{{ url_for('index') }}">Home</a>
+{% endif %}
