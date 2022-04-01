@@ -6,12 +6,10 @@ Note: Not call the script flask.py
 from crypt import methods
 from flask import Flask, make_response, redirect, render_template, request, url_for, session
 from markupsafe import escape
+from app import create_app
 
-"""Create an instance of the class. Flask need __name__"""
-app = Flask(__name__)
-
-"""Setting of app, password or key"""
-app.config["SECRET_KEY"] = '1234'
+"""Create an instance from app.create_app()"""
+app = create_app()
 
 """Decorator, What URL flask should trigger(desencadenará) our function?"""
 @app.route('/')

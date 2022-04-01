@@ -12,9 +12,10 @@ User
         <h2>Hello there {{user_ip}}</h2>
     </article>
 </section>
+{% block list_users %}
 <section>
-    {% include 'result.html'%}
 </section>
+{% endblock %}
 {% endblock %}
 
 {% else %}

@@ -1,3 +1,6 @@
+{% extends 'user.html' %}
+
+{% block list_users %}
 <table border=1>
     {% if names_user %}
     {% for key, value in names_user.items() %}
@@ -8,3 +11,4 @@
     {% endfor %}
     {% endif %}
 </table>
+{% endblock %}
