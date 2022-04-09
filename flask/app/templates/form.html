@@ -1,3 +1,12 @@
+{% with messages = get_flashed_messages() %}
+{% if message or messages %}
+<p>{{ message }}</p>
+{% for mess in messages %}
+<p>{{ mess }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
 {% extends 'index.html' %}
 {% block title%}
 Form
@@ -6,6 +15,15 @@ Form
 {% block page %}Form Page{% endblock %}
 
 {% block content%}
+{% if user_edit %}
+<form action="/update/{{user_edit.0}}" method="post">
+    <p>Enter Name:</p>
+    <p><input type="text" name="name" value="{{user_edit.1}}">Name</p>
+    <p><input type="text" name="age" value="{{user_edit.2}}">Age</p>
+    <p><input type="text" name="color" value="{{user_edit.3}}">Color</p>
+    <p><input type="submit" value="Save"></p>
+</form>
+{% else %}
 <form action="{{ url_for('form') }}" method="post">
     <p>Enter Name:</p>
     <p><input type="text" name="name">Name</p>
@@ -13,4 +31,5 @@ Form
     <p><input type="text" name="color">Color</p>
     <p><input type="submit" value="Save"></p>
 </form>
+{% endif %}
 {% endblock %}

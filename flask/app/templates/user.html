@@ -12,10 +12,31 @@ User
         <h2>Hello there {{user_ip}}</h2>
     </article>
 </section>
-{% block list_users %}
+<table border=1>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Color</td>
+            <td>Options</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.1 }}</td>
+            <td>{{ user.2 }}</td>
+            <td>{{ user.3 }}</td>
+            <td>
+                <a href="/edit/{{user.0}}">Edit</a>
+                <a href="/delete/{{user.0}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 <section>
 </section>
-{% endblock %}
 {% endblock %}
 
 {% else %}

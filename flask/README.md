@@ -9,3 +9,7 @@
 
 - Flask and Mysql
   - [CRUD](https://medium.com/@mwesigwafrank/python-flask-mysql-crud-tutorial-part-one-abf66a348bda)
+  - [Flask_mysql](https://flask-mysqldb.readthedocs.io/en/latest/)
+
+- Tools
+  - [Mysql and Vscode (SQLtools)](https://www.youtube.com/watch?v=Cz3WcZLRaWc&ab_channel=Fireship)
