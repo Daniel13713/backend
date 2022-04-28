@@ -12,6 +12,32 @@
             "database": "appflask",
             "username": "daniel",
             "password": "1375"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "172.30.112.1",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "WindowsServer",
+            "database": "appflask",
+            "username": "du",
+            "password": "1234"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "172.17.0.2",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "dockerApp",
+            "database": "appflask",
+            "username": "root",
+            "password": "1375"
         }
     ]
 }
