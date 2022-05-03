@@ -32,6 +32,7 @@ config = {
     'database': 'appflask'
 }
 
+"""Decorator, What URL flask should trigger(desencadenará) our function?"""
 
 
 @app.route("/")
@@ -44,7 +45,6 @@ def index():
     response = make_response(render_template("index.html"))
     # response.set_cookie("user_ip", user_ip) #Save on cookies
     # session["user_ip"] = user_ip  # save data on session
-
 
     return response
 
@@ -59,6 +59,7 @@ def user():
     # Get data from mysql
     mydb = mysql.connector.connect(**config)
     cursor = mydb.cursor()
+
     cursor.execute("SELECT * FROM users")
     data = cursor.fetchall()
     cursor.close()
@@ -145,14 +146,11 @@ def update(id):
         """,
             (name, age, color, id),
         )
-        
+        flash("Contact Updated Successfully")
         mydb.commit()
         cursor.close()
         mydb.close()
-        #flash("Contact Updated Successfully")
-        response = make_response(redirect(url_for("user")))
-        return response
-
+        return redirect(url_for("user"))
 
 
 @app.errorhandler(404)

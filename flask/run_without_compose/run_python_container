@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+#Create image
+docker build --tag appflask_image .
+
+#Run container
+docker run \
+  --rm -d \
+  --network mysqlnet \
+  --name appflask \
+  -p 8000:5000 \
+  appflask_image

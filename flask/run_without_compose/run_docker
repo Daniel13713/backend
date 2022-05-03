@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Create mysql container
+docker run -d -p 33060:3306 --name appMysql -e MYSQL_ROOT_PASSWORD=1375 mysql:8.0
+
+#create python-flask app
+#image
+docker build -t appflask .
+#container
+docker run -p 8000:5000 --name appcontainer appflask
