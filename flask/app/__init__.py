@@ -10,5 +10,5 @@ def create_app():
     #app.config["SECRET_KEY"] = '1234'
     app.config.from_object(Config)
     """Initialize database mysql"""
-    init_database()
+    #init_database()
     return app
