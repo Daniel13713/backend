@@ -17,7 +17,7 @@ Form
 {% block content%}
 {% if user_edit %}
 <form action="/update/{{user_edit.0}}" method="post">
-    <p>Enter Name:</p>
+    <p>Enter New Name please:</p>
     <p><input type="text" name="name" value="{{user_edit.1}}">Name</p>
     <p><input type="text" name="age" value="{{user_edit.2}}">Age</p>
     <p><input type="text" name="color" value="{{user_edit.3}}">Color</p>
