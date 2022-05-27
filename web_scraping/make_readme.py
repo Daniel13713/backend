@@ -136,7 +136,7 @@ def make_readme(URL_PAGE, option):
 
         with open("README.md", mode=mode, encoding="utf-8") as file:
             file.write("# {}\n\n".format(project_name))
-            file.write("<html>\n{}</html>".format(string_description))
+            file.write("<html>\n{}\n<a href='{}>Project Holberton</a>\n</html>".format(string_description, URL_PAGE))
 
         return True
 
