@@ -39,9 +39,10 @@ def make_readme(URL_PAGE, option):
             ----------------------------------
             """
             password = getenv("HOLBERTON_PASSWD")
+            email = getenv("HOLBERTON_EMAIL")
             params = {
                 "user[password]": password,
-                "user[login]": "3811@holbertonschool.com",
+                "user[login]": email,
                 "authenticity_token": token,
                 "commit": "submit"}
             login = session.post(URL, data=params)
