@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: myapp
+    ports:
+      - 8000:8000
+    environment:
+      - SERVER_PORT=8000
+      - NOMBRE="DU"
+    volumes:
+      - ./:/app
+    command: npm run debug
