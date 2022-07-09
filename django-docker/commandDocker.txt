@@ -1,0 +1,20 @@
+sudo docker-compose run app startproject example .
+sudo docker-compose run app python manage.py startapp app
+sudo docker-compose run app python manage.py runserver
+sudo docker-compose run app python manage.py migrate
+sudo docker-compose run app python manage.py createsuperuser
+
+# Database
+python manage.py makemigrations name_app
+python manage.py sqlmigration name_app number
+python manage.py check
+python manage.py migrate
+
+
+psql -h localhost -U postgres postgres
+
+
+# Correct
+sudo docker-compose run app django-admin startproject admin_project .
+sudo chown -R $USER:$USER admin_project manage.py
+
